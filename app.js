@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const taskRoutes = require('./routes/taskRoutes');
 
@@ -19,6 +20,7 @@ connectDB()
 	.catch(err => console.log(err));
 
 // Middleware
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
