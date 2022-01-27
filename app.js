@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const taskRoutes = require('./routes/taskRoutes');
 
 const app = express();
-dotenv.config({ path: `${__dirname}/config.env` });
+dotenv.config();
 
 // Connect db
 async function connectDB() {
